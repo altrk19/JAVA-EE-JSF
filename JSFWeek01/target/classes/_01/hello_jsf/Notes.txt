@@ -1,0 +1,47 @@
+Java Server Faces ( JSF ) nedir ?
+
+Java Server Faces (JSF) ;
+
+Server-side
+Component-Oriented/Component Based ozelliklerine sahip
+MVC(Model View Controller) yapisinda  bir Java Web Framework’udur.
+Component-Based ‘ ten kasit sudur ; ornegin bir html table kodunu JSP ile yazdigimizda row(sutun) ve column(satir) alanlarini olusturmamiz gerekmektedir fakat JSF kullandigimizda bu islem icin bir component kullanabiliriz.  JSF’i , Swing ‘in server-side sekli olarak dusunebiliriz.
+
+
+Mojarra nedir ?
+
+Java Server Faces bir belirtim/tanimlama/specification’dir. Mojarra; Java Server Faces ‘ in reference implementation’dir. Benzer sekilde baska implementation’lar da mevcuttur. Ornegin Apache MyFaces
+
+JSF Sayfalari ? Facelets nedir ?
+
+JSF sayfalari icin farkli teknolojiler kullanilabilir. JSF 1.X , JSP (Java Server Pages) uzerine insa edilmisti fakat JSF 2.X ile birlikte JSP yerine Facelet sayfalari kullanilmaktadir.
+
+Facelets , Java Server Faces icin kullanilan view declaration dilini ifade eder.
+Facelets sayfalari ;
+
+Web sayfalari icin convetion geregi XHTML dosyalari kullanilir.
+Expression Language (EL) destegi
+JSTL tag libraries destegi
+Template destegi
+
+Tag Library	URI(Uniform Resource Identifier)	Prefix
+JavaServer Faces HTML Tag Library	http://java.sun.com/jsf/html	h:
+JavaServer Faces Facelets Tag Library	http://java.sun.com/jsf/facelets	ui:
+
+
+
+Managed Bean
+
+Bean; property/ozelliklerin tanimlandigi ve getter/setter metotlarindan olusan , public no-argument yapilandiricya sahip Java siniflaridir.
+Bu no-argument yapilandirici JSF tarafinda bean objesi olusturulurken kullanilir. Bu nedenle mutlaka tanimlanmalidir.
+
+Managed Bean , JSF tarafindan ulasilan/yonetilen/manage Java bean’leridir.
+
+JSF 2.0 dan once managed beanler WEB-INF/faces-config.xml dosyasinda tanimlanmak zorundadir. JSF 2.0 ile birlikte Managed beanler @ManagedBean annotation’i kullanilarak yapilabilmektedir.
+
+
+Servlet Konfigurasyonu
+
+Java Server Faces , MVC (Model View Controller) pattern yapisi uzerine insa edilmistir.
+javax.faces.webapp.FacesServlet , istekleri karsilamak (handle request) ve sayfa yonlendirmesi (page navigation) gorevlerini ustlenir.
+
