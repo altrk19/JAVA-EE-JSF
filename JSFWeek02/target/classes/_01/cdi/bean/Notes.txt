@@ -1,0 +1,10 @@
+CDI  --> Context and Dependency Injection, Java EE'nin bir bölümüdür.
+ManagedBean'lere göre bazý esnek özellikleri mevcuttur.(scope konusunda)
+
+CDI Bean'ler Application Server üzerinde koþar.örnegin Glassfish
+
+CDI Bean kullanýrken :
+1.@Named annotation kullanmalýyýz.
+2.@Named annotation kullandýgýmýzda Serializable interface'ini implements etmeliyiz.
+3.javax.enterprise.context.SessionScoped kullanmalýyýz.
+

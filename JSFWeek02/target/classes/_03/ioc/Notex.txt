@@ -1,0 +1,24 @@
+
+// IOC 
+// Inversion of Control
+
+// objelerin olusturulmasi,yonetilmesi/ dependencyleri/bagimliklarin bu gorevi developer'dan  alma yaklasimidir.
+
+//  JSFte-> jsf implementation a birakiyoruz
+//  Spring -> Spring container a birakiyoruz.
+
+// IOC kavraminin altinda 2 tane kavram ;
+// 1)Dependency Lookup
+// 2)Dependeny Injection
+// bir IOC teknigidir.
+// Setter Injection
+// Constructor Injection
+// ilgili managen beanlerin olusturulmasi yonetilmesi islemini JSF implementation a(mojarra) a birakiyoruz.
+// biizm icin ilgili objeler olusturulmaktadir.
+
+// Managed Beanler 
+// plain old java object tipindeki siniflar managed bean olabilir.
+// pojo -> public no-arg constructor
+// standarda uygun sekilde tanimli public getter setter olmasi gerekli.
+// managed beanlaer , jsf tarafindan yonetilen/olusturulan/ulasilan/kullanilan java beanleridir.
+// 

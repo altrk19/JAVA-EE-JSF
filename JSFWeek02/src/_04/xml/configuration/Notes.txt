@@ -1,0 +1,6 @@
+Javadaki frameworklerin konfügürasyonlarý 2 þekilde olabilir
+1)Annotation
+2)xml
+
+bu uygulamada xml tabanlý yaklaþýmý yaptýk.
+xml tabanlý yaklaþým için faces-config.xml dosyasý WEB-INF klasörü altýna eklendi. Gerekli konfügürasyonlar orada yapýldý.

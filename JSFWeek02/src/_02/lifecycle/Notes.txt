@@ -1,0 +1,44 @@
+1 )Restore View 
+// restore -> yenileme , yeniden kurmak
+
+// bir jsf sayfasina istek geldiginde bu faz calisir.
+// sayfa ilk acildiginda restore view fazi calisir.
+
+// ilk istek geldiginde Component Tree olusur
+// bu fazi 2 ye ayirabiliriz ;
+
+// a) non postback request/initial request
+// direkt olarak restore view fazindan -> render response faza gecis olur.
+// burada herhangi bir form submit datasi yok.
+
+// b)postback request
+// Post ile formu/datayi submit ettigimiz durumda ortaya cikar.
+
+// 2)Apply Request Values
+// forma yazmis oldugumuz data'lar , Component tree'dek i her bir node'a/dugume baglanir.(assign edilir)
+
+// 3)Process Validaiton
+// component tree de ilgili data yer almakta.
+
+// h:inputText icin -> levent degeri yazdim gondedim. bu degerlere local value adi verilir.
+// bir validation yapilmakta.(dogrulama/gecerleme) burada bir problem yoksa lifecycle devam eder.
+// aksi durumda lifecycle son bulur , render response fazina gecis olur. ilgili hata mesajlari eklenir.
+// h:message , h:messages
+
+// 4)Update Model Values
+
+// local value'lar -> component tree deki ilgili objede duran , form alaninda yazmis oldugumuz degerler.
+// Update Model Values fazinda , bu local value'lar , ilgili ManagedBeandeki property'lere bind edilir/baglanir. set edilir/guncellenir.
+
+// 5) Invoke Application
+// bean'ler guncellendi. action code lari calisir.
+
+// h:commandButton action="welcome.xhml" -> 
+// bu fazda her sey olundaysa action kismi calisir , navigation yapilir.
+
+// 6) Render Response
+// lifecycledaki son faz.
+
+// encoding ve render islem fazi.
+
+// jsf componentelri -> html componentlerine donusur.
