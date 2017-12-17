@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Session Scope Test</title>
+</head>
+<body>
+
+ <h:form>
+ 	<table>
+ 		<tr>
+ 			<td> Name : </td>
+ 			<td> <h:inputText value="#{sessionScopedBean.name}"></h:inputText> </td>
+ 		</tr> 		
+ 		
+ 	</table>
+ 	 <p>
+ 	  <h:commandButton value="Page Forward Request Scope" action="welcome.xhtml"></h:commandButton>
+ 	 </p>
+ 	
+ 	 <p>
+ 	  <h:commandButton value="Page Redirect Request Scope" action="welcome.xhtml?faces-redirect=true"></h:commandButton>
+ 	 </p>
+ 	
+
+ </h:form>
+ 
+ <h1>#{sessionScopedBean.hashCode}</h1>
+
+</body>
+</html>
