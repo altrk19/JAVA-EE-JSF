@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+        http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+
+
+	<!--dynamic navigation example -->
+
+	<navigation-rule>
+	
+		<from-view-id>/02.dynamicNavigation/login.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/02.dynamicNavigation/welcome.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>failure</from-outcome>
+			<to-view-id>/02.dynamicNavigation/relogin.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>locked</from-outcome>
+			<to-view-id>/02.dynamicNavigation/locked.xhtml</to-view-id>
+		</navigation-case>
+		
+	</navigation-rule>
+
+	<navigation-rule>
+	
+		<from-view-id>/02.dynamicNavigation/relogin.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>locked</from-outcome>
+			<to-view-id>/02.dynamicNavigation/locked.xhtml</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>retry</from-outcome>
+			<to-view-id>/02.dynamicNavigation/login.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!--conditional navigation example -->
+
+	<navigation-rule>
+		<from-view-id>/02.dynamicNavigation/conditional/conditional.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>testOutcome</from-outcome>
+			<if>#{conditionalNavigationBean.property1 =='page1'}</if>
+			<to-view-id>/02.dynamicNavigation/conditional/page1.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>testOutcome</from-outcome>
+			<if>#{conditionalNavigationBean.property1 =='page2'}</if>
+			<to-view-id>/02.dynamicNavigation/conditional/page2.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>testOutcome</from-outcome>
+			<if>#{conditionalNavigationBean.property1 =='page3' and conditionalNavigationBean.property2 ==10}</if>
+			<to-view-id>/02.dynamicNavigation/conditional/page3.xhtml</to-view-id>
+		</navigation-case>
+		
+	</navigation-rule>
+
+	<!-- from action navigation example -->
+
+	<navigation-rule>
+		
+		<from-view-id>/02.dynamicNavigation/from.action/fromAction.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-action>#{fromActionNavigationBean.navigate1}</from-action>
+			<from-outcome>navigate</from-outcome>
+			<to-view-id>/02.dynamicNavigation/from.action/page1.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{fromActionNavigationBean.navigate2}</from-action>
+			<from-outcome>navigate</from-outcome>
+			<to-view-id>/02.dynamicNavigation/from.action/page2.xhtml</to-view-id>
+		</navigation-case>
+		
+	</navigation-rule>
+
+
+	<!-- redirect navigation example -->
+
+	<navigation-rule>
+		<from-view-id>/02.dynamicNavigation/redirection/redirection.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>redirectOutcome</from-outcome>
+			<to-view-id>/02.dynamicNavigation/redirection/page1.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+
+</faces-config>

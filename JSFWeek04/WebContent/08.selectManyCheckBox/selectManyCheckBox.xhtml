@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</h:head>
+
+<h:body>
+	<h:form prependId="false" id="formId1">
+	
+		<h:selectManyCheckbox value="#{selectManyCheckBoxBean.languages}">                                <!-- selectItem ile hardcoded yapı kullanıldı -->
+			<f:selectItem itemValue="Java"  itemLabel="Java !!"></f:selectItem>
+			<f:selectItem itemValue="C"  itemLabel="C !!"></f:selectItem>
+			<f:selectItem itemValue="PHP"  itemLabel="PHP !!"></f:selectItem>
+			<f:selectItem itemValue="C#"  itemLabel="C# !!"></f:selectItem>
+		</h:selectManyCheckbox>
+		
+	 	<h:selectManyCheckbox value="#{selectManyCheckBoxBean.jpaFrameworks}">
+	 		<!-- burada f:selectItems icin array , list , map kullanilabilir ! -->                    <!-- burda hardcoded kullanılmadı. array yapısı kullanıldı. -->
+	 		<f:selectItems value="#{selectManyCheckBoxBean.preparedData}"/> 
+		</h:selectManyCheckbox>
+		
+		
+		<h:selectManyCheckbox value="#{selectManyCheckBoxBean.mvcFrameworks}">                                   <!-- map ile kullanımı -->
+			<f:selectItems value="#{selectManyCheckBoxBean.preparedMVCFrameworks}"/>
+		</h:selectManyCheckbox>
+		
+		<h:commandButton value="click me" action="page1"></h:commandButton>
+	</h:form>
+</h:body>
+</html>
