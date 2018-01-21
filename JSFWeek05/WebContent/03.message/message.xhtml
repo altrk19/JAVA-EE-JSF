@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Welcome</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<h3>Please enter your name and password.</h3>
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><h:inputText value="#{mBean.name}"  id="name" required="true" label="name label"  requiredMessage="it is required!"/></td>
+				<td><h:message for="name" errorStyle="color:red"/></td>
+			</tr>
+			<tr>
+				<td>Surname:</td>
+				<td><h:inputText value="#{mBean.surname}" id="surname" required="true" label="surname label" /></td>
+				<td><h:message for="surname"></h:message></td>
+			</tr>
+			<tr>
+				<td>Age:</td>
+				<td><h:inputText value="#{mBean.age}" id="age" required="true" label="age label"/></td>
+				<td><h:message for="age"></h:message></td>
+			</tr>
+			
+			<tr>
+				<td>Number:</td>
+				<td> <h:inputText id="number" label="number label">
+						<f:validateLength minimum="5" maximum="10"/>
+					</h:inputText></td>
+				<td><h:message for="number"></h:message></td>
+			</tr>
+		</table>
+		<p>
+			<h:commandButton value="Click Me!" action="welcome.xhtml" />
+		</p>
+
+		<p>
+			<h:messages />
+		</p>
+	</h:form>
+</h:body>
+</html>
